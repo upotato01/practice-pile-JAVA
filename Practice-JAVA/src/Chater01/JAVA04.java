@@ -33,16 +33,16 @@ public class JAVA04 {
 
             if (noteType == 2) {
                 System.out.println("인출할 오만원권 개수를 선택해주세요:");
+                System.out.println("(최대 " + (withdrawalAmount / 50000) + "개까지 인출 가능합니다.)");
                 int numNotes = sc.nextInt();
                 int totalAmount = numNotes * 50000;
-
                 if (totalAmount > balance) {
                     System.out.println("잔액이 부족합니다.");
                     System.out.println("최대 " + (balance / 50000) + "개까지 인출 가능합니다.");
                 } else {
                     balance -= totalAmount;
                     System.out.print("인출 중입니다.");
-                    Thread.sleep(2000);
+                    Thread.sleep(10000);
                     System.out.println("\n인출이 완료되었습니다. 남은 잔액: " + balance + "원");
                 }
             } else if (noteType == 1) {
